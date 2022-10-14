@@ -19,7 +19,7 @@ else
     thread=$(nproc)
 fi
 
-vrs_commit_sha=afa85d113410a3678a02bc8eb0798dc948cae5c5
+vrs_commit_sha=dcfcf579448f276a6cce8455a29005652879af73
 
 # Build Fmt
 cd /tmp; git clone https://github.com/fmtlib/fmt.git -b 8.1.1 \
@@ -43,7 +43,7 @@ cd /tmp; git clone https://github.com/stevenlovegrove/Pangolin.git -b v0.8 --rec
     && sudo make -j$thread install; sudo cmake --build . -t pypangolin_pip_install;
 
 # Build VRS from specific commit SHA
-cd /tmp; git clone https://github.com/facebookresearch/vrs.git \
+cd /tmp; git clone https://github.com/gustavomart/vrs.git \
     && cd vrs \
     && git reset --hard $vrs_commit_sha \
     && cd ../ \
